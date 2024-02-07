@@ -1,7 +1,7 @@
 import { pusherServer } from "@lib/pusher";
 import Chat from "@models/Chat";
 import User from "@models/User";
-import { connectToDB } from "@mongodb";
+import { connectToDB } from "@mongoDB";
 
 export const POST = async (req) => {
   try {

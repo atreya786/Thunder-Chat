@@ -8,6 +8,7 @@ import Link from "next/link";
 import { CldUploadButton } from "next-cloudinary";
 import MessageBox from "./MessageBox";
 import { pusherClient } from "@lib/pusher";
+import toast from "react-hot-toast";
 
 const ChatDetails = ({ chatId }) => {
   const [loading, setLoading] = useState(true);
@@ -115,7 +116,7 @@ const ChatDetails = ({ chatId }) => {
   return loading ? (
     <Loader />
   ) : (
-    <div className="pb-20">
+    <div className="pb-5">
       <div className="chat-details">
         <div className="chat-header">
           {chat?.isGroup ? (
@@ -165,7 +166,7 @@ const ChatDetails = ({ chatId }) => {
             <CldUploadButton
               options={{ maxFiles: 1 }}
               onUpload={sendPhoto}
-              uploadPreset="upecg01j"
+              uploadPreset="project"
             >
               <AddPhotoAlternate
                 sx={{
@@ -187,7 +188,15 @@ const ChatDetails = ({ chatId }) => {
             />
           </div>
 
-          <div onClick={sendText}>
+          <div
+            onClick={() => {
+              if (text.length > 0) {
+                sendText();
+              } else {
+                toast.error("Message can't be empty");
+              }
+            }}
+          >
             <img src="/assets/send.jpg" alt="send" className="send-icon" />
           </div>
         </div>

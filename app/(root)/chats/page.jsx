@@ -1,5 +1,5 @@
-import ChatList from "@components/ChatList";
-import Contacts from "@components/Contacts";
+import ChatList from "@components/ChatList"
+import Contacts from "@components/Contacts"
 
 const Chats = () => {
   return (
@@ -11,7 +11,7 @@ const Chats = () => {
         <Contacts />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Chats;
+export default Chats

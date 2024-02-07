@@ -1,5 +1,5 @@
 import User from "@models/User";
-import { connectToDB } from "@mongodb";
+import { connectToDB } from "@mongoDB";
 
 export const GET = async (req, res) => {
   try {

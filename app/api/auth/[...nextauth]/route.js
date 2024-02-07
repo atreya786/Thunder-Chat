@@ -2,7 +2,7 @@ import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { compare } from "bcryptjs";
 
-import { connectToDB } from "@mongodb";
+import { connectToDB } from "@mongoDB";
 import User from "@models/User";
 
 const handler = NextAuth({
@@ -37,10 +37,10 @@ const handler = NextAuth({
 
   callbacks: {
     async session({ session }) {
-      const mongodbUser = await User.findOne({ email: session.user.email });
-      session.user.id = mongodbUser._id.toString();
+      const mongoDBUser = await User.findOne({ email: session.user.email });
+      session.user.id = mongoDBUser._id.toString();
 
-      session.user = { ...session.user, ...mongodbUser._doc };
+      session.user = { ...session.user, ...mongoDBUser._doc };
 
       return session;
     },

@@ -1,7 +1,7 @@
 import Chat from "@models/Chat";
 import Message from "@models/Message";
 import User from "@models/User";
-import { connectToDB } from "@mongodb";
+import { connectToDB } from "@mongoDB";
 
 export const GET = async (req, { params }) => {
   try {
