@@ -15,7 +15,6 @@ const Form = ({ type }) => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
 
@@ -32,6 +31,7 @@ const Form = ({ type }) => {
       });
 
       if (res.ok) {
+        toast.success("Registered SUccessfully");
         router.push("/");
       }
 
