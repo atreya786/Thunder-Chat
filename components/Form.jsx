@@ -59,7 +59,10 @@ const Form = ({ type }) => {
   return (
     <div className="auth">
       <div className="content">
-        <img src="/assets/logo.png" alt="logo" className="logo" />
+        <div className="flex items-center gap-3">
+          <img src="/assets/logo.png" alt="logo" className="logo" />
+          <p className="text-heading2-bold">Thunder Chat</p>
+        </div>
 
         <form className="form" onSubmit={handleSubmit(onSubmit)}>
           {type === "register" && (

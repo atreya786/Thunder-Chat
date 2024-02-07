@@ -18,8 +18,11 @@ const TopBar = () => {
 
   return (
     <div className="topbar">
-      <Link href="/chats">
+      <Link href="/chats" className="flex items-center gap-3">
         <img src="/assets/logo.png" alt="logo" className="logo" />
+        <span>
+          <p className="text-heading2-bold">Thunder Chat</p>
+        </span>
       </Link>
 
       <div className="menu">
