@@ -31,7 +31,7 @@ const Form = ({ type }) => {
       });
 
       if (res.ok) {
-        toast.success("Registered SUccessfully");
+        toast.success("Registered Successfully");
         router.push("/");
       }
 
